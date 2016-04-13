@@ -1,0 +1,190 @@
+.box {
+	width: 96px;
+	height: 96px;
+	line-height: 96px;
+	text-align: center;
+	color: #333333;
+	margin: 2px;
+	display: block;
+	text-decoration: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.box img {
+	width: 96px;
+	vertical-align: middle;
+}
+
+.box1 {background: red;}
+.box2 {background: blue;}
+.box3 {background: orange;}
+
+.ibox,
+.cbox,
+.fbox {
+	width:900px;
+	height:355px;
+	text-align: left; 
+	color: #333333;
+	display: block;
+	text-decoration: none;
+	overflow: hidden;
+	position: relative;
+}
+.ibox img {
+
+}
+
+.cbox img,
+.fbox img{
+	width: 100%;
+
+}
+
+.fbox {
+	width: 400px;
+	height: 400px;
+	line-height: 600px;
+}
+
+span.delta {
+	position: absolute;
+	top: 0;
+	width: 1px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: magenta;
+}
+
+.ibox span.delta {
+	height: 210px;
+}
+
+.active .box {
+
+}
+
+.gallery-holder {
+
+}
+
+.gallery {
+	width: 100%;
+	overflow: hidden;
+}
+
+.gallery div.holder {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery div.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 19999px;
+	overflow: hidden;
+}
+
+.gallery div.item {
+	float: left;
+}
+
+/*.moving {
+	background: yellow;
+}*/
+
+.debug-item {
+	padding: 1px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: -1px;
+	color: #999;
+	font-size: 11px;
+}
+
+#menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu a {
+	display: block;
+	border: 1px solid #ccc;
+	padding: 6px 0;
+	margin-bottom: 6px;
+	font-size: 8px;
+	color: #333;
+	background: #EFEFEF;
+	text-decoration: none;
+	text-align: center;
+}
+
+a.prev,
+a.next,
+#moveTo,
+a.tablink,
+#counter {
+	border: 1px solid #CCC;
+	font-weight:bold;
+	background-color:#d0d0d0;
+	color: #f2f2f2;
+	width:10px;
+	height:10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-decoration: none;
+}
+a.prev {margin: 0 2px 2px; border:0px; background-color:#fff; color:#020202;}
+a.next {margin: 0 2px 2px; border:0px; background-color:#fff; color:#020202;}
+
+#moveTo,
+#counter {
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 200px;
+	text-align: center;
+}
+
+.focus .ibox {
+
+} 
+.focus-old .ibox {
+} 
+
+#tabs, #tabs2 
+{
+    text-align:center;
+}
+.tablink {
+	display: inline-block;
+	overflow: hidden;
+	margin: 0 0px;
+}
+a.active {
+	border:2px solid #303030;
+	color:#303030;
+	background-color:#303030;
+}
+
+#tabs2 .tablink {
+	display: inline-block;
+	overflow: hidden;
+	width: 2px;
+	height: 2px;
+	text-align: center;
+	margin: 0 5px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	text-indent: -9999px;
+}
+
+#tabs2 a.active {
+	background-color: #666;
+}

@@ -1,0 +1,234 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>paoloricca.eu</title>
+    <link rel="stylesheet" type="text/css" href="styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="styles/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="styles/scopri.css" />
+    <link rel="stylesheet" type="text/css" href="styles/slider.css" />
+    <link rel="stylesheet" href="assets/css/prettify.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.css" rel="stylesheet" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,500,700' rel='stylesheet' type='text/css' />
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css' />
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    <script type="text/javascript">
+        //window.onscroll=hideUserRole;
+        function ShowHideLogin()
+        {
+            if(document.getElementById('menuAll').style.display=='block') 
+            { 
+                document.getElementById('menuAll').style.display='none';
+                document.getElementById('menuIconStatus').className='icon-caret-down';
+            }
+            else 
+            { 
+                document.getElementById('menuAll').style.display='block';
+                document.getElementById('menuIconStatus').className='icon-caret-up';
+            }
+        }
+        function ShowHideMenu(menuID)
+        {
+            document.getElementById(menuID).style.display='block';
+        }
+        function initHideBanner()
+        {
+//            document.body.style.overflow='hidden';
+//            setInterval(initCounter, 1000);
+//            setTimeout(hideBanner, 10000);
+        }
+        function hideBanner()
+        {
+            document.getElementById('dBanner').style.display='none';
+            document.body.style.overflow='auto';
+            clearInterval(initCounter);
+        }
+    </script>
+</head>
+<body>
+
+    <form id="frmMaster" runat="server">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div id="dBanner" style="display:none;">
+            <div id="dBannerBackground" runat="server" style="z-index:951515150000000000000001; background-color:#fff; opacity:0.85; filter:alpha(opacity=85); width:100%; height:100%; position:absolute; top:0px; left:0px;" />
+            <div class="dSBox" runat="server" id="dBannerContent" style="z-index:951515150000000000000002; border:1px solid #e8e8e8; background-color:#fff; position:absolute; width:60%; height:70%; top:0%; left:50%; margin-top:8.5%; margin-left:-30%;">
+                <div class="dBlock" style="width:94%; padding:3%;">
+                    <div class="dBlock" style="width:70%; margin-top:2.5%;">
+                        <div class="dBlock" style="font-family:'latolight'; font-size:350%; letter-spacing:-0.5px; word-spacing:-0.25px; color:#202020;">
+                            E tu, sei pronto a dare i numeri?
+                        </div>
+                        <div class="dBlock" style="margin-top:5%; font-family:'latoregular'; font-size:120%; line-height:150%; color:#707070; width:80%;">
+                            Presto qui disponibile l'<b>App Social</b> che consentirà anche a te di dare i numeri, i tuoi...
+                            <p>Ancora un pò di pazienza, continua a seguirmi.</p>
+                        </div>
+                    </div>
+                    <div class="dBlock" style="width:25%; margin-left:5%;">
+                        <div class="dBlock" style="text-align:center;">
+                            <i class="icon-time cMagenta" style="font-size:700%;"></i>
+                        </div>
+                        <div class="dBlock bcMagenta" id="dCounter" 
+                            style="margin-top:2.5%; font-weight:bold; color:#fff; padding:2%; width:96%; text-align:center;">
+                            10
+                        </div>
+                        <div class="dBlock" style="margin-top:5%;">
+                        i secondi che hai a disposizione per leggere questo messaggio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="dSeguimiBottom" class="rnd2" style="position:fixed; top:45%; width:5%; padding:1%; font-family:'Arial'; 
+            font-size:13px; left:-0.5%; z-index:11000000000000000; border:1px solid #101010; background-color:#fff; opacity:0.80; filter:alpha(opacity=80);"
+            onmouseover="document.getElementById('dSeguimiBottom').style.display='none'; document.getElementById('dSeguimi').style.display='block';">
+            <div class="dBlock" style="width:100%; font-size:12px; line-height:120%; font-weight:bold;">
+                <i class="icon-thumbs-up"></i> Ti piace?
+            </div>
+        </div>
+        <div id="dSeguimi" class="rnd2" style="position:fixed; display:none; top:45%; width:20%; padding:1%; left:-0.5%; 
+            border:1px solid #101010; background-color:#fff; z-index:12000000000000000;"
+            onmouseout="document.getElementById('dSeguimi').style.display='none'; document.getElementById('dSeguimiBottom').style.display='block'; ">
+            <div class="fb-like-box" data-href="https://www.facebook.com/stodandoinumeri" data-width="100%" 
+                data-colorscheme="light" data-show-faces="false" data-header="false" 
+                data-stream="false" data-show-border="false"></div>
+            <div style="display:none;">
+                <blockquote class="twitter-tweet" style="width:30%; font-size:50%;" lang="it"><p>Dall’idea al progetto l&#39;obiettivo non cambia, migliorarmi per crescere in ogni ambito del mio lavoro. Sto dando i numeri.. <a href="https://twitter.com/hashtag/RCCPLA77H19H50MF?src=hash">#RCCPLA77H19H50MF</a></p>&mdash; Paolo Ricca (@paoloricca_eu) <a href="https://twitter.com/paoloricca_eu/status/535028451460526082">19 Novembre 2014</a></blockquote>
+                <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        </div>
+        <div class="homeSupPersonal">
+            <div style="position:absolute; margin-left:1%; width:98.6%; padding:0.3%;">
+                <div class="dBlock" style="width:4.4%; padding:0.3%;">
+                    <asp:Image ID="Image1" runat="server" ImageUrl="images/logo_ue.png" style="border:1px solid #151515;" />
+                </div>
+                <div class="dBlock" style="width:94.5%; padding:0.25%; color:#fff;">
+                    &#60; <span style="font-size:150%; letter-spacing:-0.4px; font-family:'Raleway'; text-transform:lowercase;">PAOLO<b>RICCA</b></span> &#47;&#62;<sup class="cGiallo" style="font-size:75%; letter-spacing:0px;"> EU</sup>
+                </div>
+            </div>
+            <div class="default-container">
+                <div class="menu">
+                    <div class="dBlock" style="width:28%; padding:0%; color:#fff; margin-left:2%; margin-top:-0.25%; position:absolute;">
+
+                    </div>
+                    <div id="dLanguage" class="dBlock">
+                        <span>
+                            <a href="#aIdentita">
+                                <asp:Literal runat="server" ID="ucLabelAnni" />
+                            </a>
+                        </span>
+                        <span>
+                            <a href="#aEsperienze">
+                                <asp:Literal runat="server" Text="<span class='cMagenta'>13</span> <sup>esperienze</sup>" />
+                            </a>
+                        </span>
+                        <span>
+                            <a href="#aCertificazioni">
+                                <asp:Literal runat="server" Text="<span class='cGiallo'>03</span> <sup>Certificazioni</sup>" />
+                            </a>
+                        </span>
+                        <asp:LinkButton Visible="false" ID="lnk_ITA" runat="server" OnClick="btnCulture_SelectedIndexChanged" 
+                            CommandArgument="380" style="text-decoration:none;" Text="ITA" />
+                        <asp:LinkButton Visible="false" ID="lnk_ENG" runat="server" OnClick="btnCulture_SelectedIndexChanged" 
+                            CommandArgument="826" style="text-decoration:none;" Text="ENG" />
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="homeBody">
+            <div class="dBlock">
+                <div class="appBody">
+                    <asp:ContentPlaceHolder id="AppBody" runat="server" />
+                </div>
+            </div>
+        </div>
+        <div runat="server" id="dFooter" class="homeFooter" style="background-image:url('images/backintro.png'); background-repeat:repeat-x;">
+            <div class="default-container" style="border-top:0px solid #e1e1e1;">
+                <div class="dBlock" style="padding-top:5%; padding-bottom:5%;">
+                    <div id="footer">
+                        <div id="footerTitle" style="font-family:'Amatic SC'; font-weight:700; font-size:175%;">
+                            <span class="cMagenta">&#169; <%=DateTime.Now.Year%></span>. oggi è <%=DateTime.Now.ToString("dddd")%>, <%=DateTime.Now.Day%> <%=DateTime.Now.ToString("MMMM")%>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="dBlock">
+                            <i class="icon-windows cVerde icon-4x" title="paoloricca.eu"></i>
+                        </div>
+                        <div class="dBlock" style="margin-top:5%;">
+                            @ outlook.com
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="dBlock">
+                            <i class="icon-google-plus cRosso icon-4x" title="paoloricca.eu"></i>
+                        </div>
+                        <div class="dBlock" style="margin-top:5%;">
+                            @ gmail.com
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="dBlock">
+                            <i class="icon-skype cCiano icon-4x"></i>
+                        </div>
+                        <div class="dBlock" style="margin-top:5%;">
+                            paoloricca.eu
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scrtop" style="display:none;">
+            <div style="left:90%; top:80%; width:10%; 
+                position:fixed; z-index:999999999999999999999999;">
+                <span onclick="window.scrollTo(0, 0);"><i class="icon-angle-up icon-4x"></i></span>
+            </div>
+        </div>
+<script type="text/javascript"><!--
+/* Add dynamically button to scroll to top of the page: coursesweb.net/javascript/ */
+
+// function to get browser's window height
+function getBrowsHeight() {
+  if (self.innerHeight) var brows_height = self.innerHeight;
+  else if (document.documentElement && document.documentElement.clientHeight) {
+    var brows_height = document.documentElement.clientHeight;
+  }
+  else if (document.body) var brows_height = document.body.clientHeight;
+
+  return brows_height;
+}
+
+// function to get scrollbar vertical position
+function scrollY() {
+  return window.pageYOffset ? window.pageYOffset : document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop;
+}
+
+var brows_height = getBrowsHeight();         // window's height
+
+// register event on scroll window
+window.onscroll = function() {
+  var scrl_pos = scrollY();                // get vertical scrollbar position
+
+  // if vertical scroll position is more then 110% brows_height, makes '#scrtop' visible
+  // else, if vertical scroll position is less then 110% brows_height, hides '#scrtop'
+ if(scrl_pos > (400)) {
+   document.getElementById('scrtop').style.display = 'block';
+ }
+ else if(scrl_pos < (brows_height * 1.1)) {
+   document.getElementById('scrtop').style.display = 'none';
+ }
+};
+--></script>
+    
+    </form>
+</body>
+</html>

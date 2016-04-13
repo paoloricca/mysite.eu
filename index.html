@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>paoloricca.eu</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="Styles/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Anton|Oswald|Amatic+SC|Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="Styles/fonts.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="Styles/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="Styles/creative.css" type="text/css">
+    <link rel="stylesheet" href="Styles/default.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/jquery-1.9.0.min.js"></script>
+    <script src="experiences.js"></script>
+    <script>
+        function init_experiences(selectedIndex) {
+            var container = $("#slide_experiences");
+            container.html("");
+            var strExperiences = "";
+            $(esperienze).each(function (index, esperienza) {
+                var strTecnologie = "<ul>"
+                $(esperienza.tecnologie).each(function (index, tecnologia) {
+                    strTecnologie += "<li>" + tecnologia.text + "</li>";
+                });
+                strTecnologie += "</ul>"
+                if (selectedIndex == index) {
+                    strExperiences += '<div class="item active col-xs-12">';
+                } else {
+                    strExperiences += '<div class="item col-xs-12">';
+                }
+                strExperiences +=
+                    '<div class="col-xs-12">' +
+                        '<div class="col-xs-9">' +
+                            '<h3 class="titolo text-primary text-uppercase">' +
+                                esperienza.cliente +
+                            '</h3>' +
+                        '</div>' +
+                        '<div class="col-xs-3">' +
+                            '<h3 class="titolo text-primary text-uppercase pull-right">' +
+                                esperienza.anno +
+                            '</h3>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="col-xs-12">' +
+                        '<h4 class="titolo" style="line-height:150%; color:#909090;">&quot;' +
+                            esperienza.quot +
+                        '&quot;</h4>' +
+                    '</div>' +
+                    '<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">' +
+                        '<h5 class="titolo" style="line-height:150%;">' +
+                            esperienza.descrizione +
+                        '</h5>' +
+                    '</div>' +
+                    '<div class="col-xs-12 col-sm-4 col-sm-offset-2 col-md-4 col-md-offset-2 col-lg-4 col-lg-offset-2">' +
+                        '<div class="col-xs-12"><h4 class="titolo text-primary">Expertise</h4></div>' +
+                        '<div class="col-xs-12">' +
+                            '<h6 class="titolo" style="line-height:150%;">' +
+                                strTecnologie +
+                            '</h6>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>' +
+                    '</div>';
+            });
+            container.append(strExperiences);
+        }
+    </script>
+
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">&#60;PR /&#62;</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Experiences</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#certifications">Certifications</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <div id="modal_experiences" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="btn pull-right"><i class="fa fa-close" data-dismiss="modal" data-toggle="tooltip" title="Chiudi"></i></p>
+                    <h2 class="modal-title titolo text-uppercase">
+                        Experiences
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Wrapper for slides -->
+                            <!-- Left and right controls -->
+                            <div class="col-xs-12">
+                                <div class="col-xs-6">
+                                    <a class="btn" href="#myCarousel" role="button" data-slide="prev" data-toggle="tooltip" title="Precedente">
+                                        <i class="fa fa-angle-left fa-2x animated" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6">
+                                    <a class="btn pull-right" href="#myCarousel" role="button" data-slide="next" data-toggle="tooltip" title="Prossima">
+                                        <i class="fa fa-angle-right fa-2x animated" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                                <div id="slide_experiences" class="carousel-inner" role="listbox">
+                                    <script>
+                                        $(function () {
+                                            init_experiences(0);
+                                        })
+                                    </script>
+                                </div>
+                                <div class="col-xs-12">
+                                    <hr />
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header-content">
+            <div class="header-content-inner">
+                <div class="col-xs-12">
+                    <h1 class="titolo hidden-xs text-shadow">
+                        <span style="color:lightsalmon">CRESCERE SEMPRE</span><br />PER MIGLIORARE IN OGNI AMBITO DEL MIO LAVORO.
+                    </h1>
+                    <h2 class="titolo hidden-sm hidden-md hidden-lg text-shadow">
+                        <span style="color:lightsalmon">CRESCERE SEMPRE</span><br />PER MIGLIORARE IN OGNI AMBITO DEL MIO LAVORO.
+                    </h2>
+                </div>
+                <div class="col-xs-12">
+                    <hr>
+                    <h5>&quot;Dall'idea al progetto l'obiettivo non cambia, migliorare costantemente per crescere in ogni ambito del mio lavoro.&quot;</h5>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#about" class="btn btn-circle page-scroll" data-toggle="tooltip" title="Scopri di pi&ugrave;" data-placement="right">
+                        <i class="fa fa-angle-down fa-2x cBianco"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="about" class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading titolo">38, IL NUMERO DEI MIEI ANNI!</h2>
+                    <hr class="light">
+                    <p>
+                        <h5 class="text-faded">
+                            Da una grande passione per l'arte e la fotografia durante l'adolescenza muovo i primi passi nel mondo del design; terminato il servizio di leva frequento con curiosità un corso alla Regione Lazio, è amore a prima vista e dopo un anno conseguo con successo un diploma di grafica pubblicitaria, inizia il mio percorso!
+                        </h5>
+                    </p>
+                    <a href="#services" class="btn btn-circle page-scroll" data-toggle="tooltip" title="Scopri di pi&ugrave;" data-placement="right">
+                        <i class="fa fa-angle-down fa-2x cBianco"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading titolo">DESIGNER, ANALYST, PRODUCER.</h2>
+                    <hr class="primary">
+                    <p>
+                        <h5 class="text-muted">
+                            Dopo alcune esperienze come grafico e professionista freelance partecipo con entusiasmo a svariati corsi di formazione,
+                            entro in contatto con realtà dell'IT che contribuiscono a consolidare competenze informatiche ormai sempre più orientate allo sviluppo software.
+                        </h5>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-code wow bounceIn text-primary"></i>
+                        <h3 class="titolo text-primary">Designer</h3>
+                        <p class="text-muted text-left">
+                            Image editing, elaborazione raster e vettoriale, lettering, corporate identity, brand e marketing communication.
+                            Creo ed impagino contenuti rivolti al Web, progetto componenti ed interfacce grafiche, implemento soluzioni
+                            responsive per i più diffusi dispositivi desktop e mobili.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-pie-chart wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3 class="titolo text-primary">Analyst</h3>
+                        <p class="text-muted text-left">
+                            Raccogliere con puntualità i desiderata più opportuni, modellare le esigenze progettuali partendo dai requisiti funzionali,
+                            descrivere i relativi casi d'uso ed integrare l'architettura logica e fisica del Database, l'analisi è uno degli aspetti
+                            più delicati a cui dedico grande attenzione.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-tv wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3 class="titolo text-primary">Producer</h3>
+                        <p class="text-muted text-left">
+                            Siti internet, Sistemi informativi, Portali e Intranet aziendali, da sempre appassionato al web.
+                            Oggi disegno e sviluppo prodotti software rivolti a diversi canali del settore, curando tutti i processi
+                            coinvolti nell'intero ciclo di vita del progetto, dalla pianificazione al controllo, dallo sviluppo alla delivery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="no-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading titolo">
+                        EXPERIENCES
+                    </h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row no-gutter">
+                <div id="container_experiences">
+                    <script>
+                        $(function () {
+                            var container = $("#container_experiences");
+                            var strExperiences = "";
+                            $(esperienze).each(function (index, esperienza) {
+                                strExperiences +=
+                                    '<div class="col-lg-4 col-md-4 col-sm-6">' +
+                                        '<a href="#" onclick="init_experiences(' + index + ')" class="portfolio-box" data-toggle="tooltip" title="Scopri di pi&ugrave;" data-placement="bottom">' +
+                                            '<div class="portfolio-box-caption">' +
+                                                '<div class="portfolio-box-caption-content">' +
+                                                    '<div class="project-category text-faded">' +
+                                                        esperienza.cliente +
+                                                    '</div>' +
+                                                    '<div class="project-name">' +
+                                                        esperienza.anno +
+                                                    '</div>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</a>' +
+                                '</div>';
+                            });
+                            container.append(strExperiences);
+                            $("#container_experiences a").click(function () {
+                                $("#modal_experiences").modal();
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="certifications">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading titolo">CERTIFICATIONS</h2>
+                    <hr class="primary">
+                    <p class="text-muted">
+                        Attualmente un pò datate, ma sempre conseguite con successo!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
+                        <h3 class="titolo">70/306</h3>
+                        <p>
+                            29 dicembre 2005
+                        </p>
+                        <p class="text-muted text-left">
+                            MCP Developing and implementing Windows-based Applications with Microsoft VB.NET and the Microsoft VS.NET.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                        <h3 class="titolo">70/305</h3>
+                        <p>
+                            10 Marzo 2006
+                        </p>
+                        <p class="text-muted text-left">
+                            MCP Developing and implementing Web-Applications with Microsoft VB.NET and the Microsoft VS.NET.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-diamond wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                        <h3 class="titolo">70/310</h3>
+                        <p>
+                            24 Marzo 2006
+                        </p>
+                        <p class="text-muted text-left">
+                            MCP XML Web Services and Server Components with Microsoft VB.NET and the Microsoft .NET Framework.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading titolo">CONTACT</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-windows wow bounceIn text-success"></i>
+                        <h3 class="titolo">
+                            @ outlook.com
+                        </h3>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-google-plus wow bounceIn text-danger" data-wow-delay=".1s"></i>
+                        <h3 class="titolo">
+                            @ gmail.com
+                        </h3>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-box text-center">
+                        <i class="fa fa-4x fa-skype wow bounceIn text-info" data-wow-delay=".2s"></i>
+                        <h3 class="titolo">
+                            paoloricca.eu
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+        <script src="js/wow.min.js"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="js/creative.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip({ html: true });
+            $('.carousel').carousel({
+                interval: 20000
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>

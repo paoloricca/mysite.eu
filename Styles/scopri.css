@@ -1,0 +1,224 @@
+﻿.box {
+	width: 96px;
+	height: 96px;
+	line-height: 96px;
+	text-align: center;
+	color: #333333;
+	margin: 2px;
+	display: block;
+	text-decoration: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.box img {
+	width: 96px;
+	vertical-align: middle;
+}
+
+.box1 {background: red;}
+.box2 {background: blue;}
+.box3 {background: orange;}
+
+.ibox,
+.cbox,
+.fbox {
+	width: 980px;
+	height: 480px;
+	padding-bottom:0px;
+	text-align: left; 
+	color: #252525;
+	display: block;
+	text-decoration: none;
+	overflow: hidden;
+	position: relative;
+}
+
+.fbox {
+	width: 650px;
+	height: 500px;
+}
+
+span.delta {
+	position: absolute;
+	top: 0;
+	width: 1px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background: magenta;
+}
+
+.ibox span.delta {
+	height: 210px;
+}
+
+.active .box {
+
+}
+
+.gallery-holder {
+
+}
+
+.gallery {
+	width: 100%;
+	overflow: hidden; border:0px solid #e8e8e8;
+}
+
+.gallery div.holder {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery div.list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 19999px;
+	overflow: hidden;
+}
+
+.gallery div.item {
+	float: left;
+}
+
+/*.moving {
+	background: yellow;
+}*/
+
+.debug-item {
+	padding: 1px 0;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: -1px;
+	color: #999;
+	font-size: 11px;
+}
+
+#menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#menu a {
+	display: block;
+	border: 1px solid #ccc;
+	padding: 6px 0;
+	margin-bottom: 6px;
+	font-size: 8px;
+	color: #333;
+	background: #EFEFEF;
+	text-decoration: none;
+	text-align: center;
+}
+
+a.prev,
+a.next,
+#moveTo,
+a.tablink,
+#counter {
+	border: 0px solid #e1e1e1;
+	font-weight:bold;
+	color: #e1e1e1;
+	background: #e1e1e1;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	text-decoration: none;
+}
+a.prev {margin: 0 2px 2px; border:0px; background-color:#fff; color:#020202;}
+a.next {margin: 0 2px 2px; border:0px; background-color:#fff; color:#020202;}
+
+#moveTo,
+#counter {
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	width: 200px;
+	text-align: center;
+}
+
+.focus .ibox {
+
+} 
+.focus-old .ibox {
+} 
+
+#tabs, #tabs2 
+{
+    text-align:center;
+}
+.tablink {
+	display: inline-block;
+	overflow: hidden;
+	margin-right:6px;
+}
+a.active {
+	border:2px solid #fff;
+	color:#101010;
+	background-color:#101010;
+}
+
+#tabs2 .tablink {
+	display: inline-block;
+	overflow: hidden;
+	width: 2px;
+	height: 2px;
+	text-align: center;
+	margin-right:10px;
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	text-indent: -9999px;
+}
+
+#tabs2 a.active {
+	background-color: #666;
+}
+.iboxLeft
+{
+    display:block; width:54%; padding:3%; padding-top:2.5%; float:left; font-family:'Calibri';
+    font-size:110%; line-height:118%; letter-spacing:-0.25px; word-spacing:-0.75px; text-align:left;
+}
+.iboxLeftTitle
+{
+    font-family:'haetten'; font-size:250%; font-weight:normal;
+    letter-spacing:1px; text-transform:uppercase; margin-bottom:4%; text-align:left;
+}
+.iboxLeftSubTitle
+{
+    font-size:115%; line-height:112%; margin-bottom:5%; letter-spacing:-0.5px; word-spacing:-0.4px; color:#303030; text-align:left;
+}
+.iboxLeftSubTitleMyMepa
+{
+    font-family:'Calibri'; font-weight:bold; letter-spacing:-0.25px; line-height:120%; text-align:left;
+}
+.iboxRightHome
+{
+    display:block; width:35%; float:left; padding:2.5%; padding-top:0%; text-align:left;
+}
+.iboxRight
+{
+    display:block; width:35%; float:left; padding:2.5%; padding-top:5%; text-align:center;
+}
+.iboxHomeTitle
+{
+    font-family:'haetten'; font-size:450%; word-spacing:-2px; letter-spacing:1px; line-height:82%; color:#303030; text-align:left;
+}
+.iboxHomeSubTitle
+{
+    font-family:'ArialMT'; display:block; margin-top:5%; font-size:100%; word-spacing:-0.2px; 
+    line-height:116%; color:#606060; letter-spacing:0px; text-align:left; width:95%;
+}
+.iboxRightNote
+{
+    display:block; float:left; width:90%; padding:0%; padding-top:5%; margin-left:10%; letter-spacing:0px; word-spacing:-0.75px; 
+    font-family:'RobotoCondensed'; font-size:98%; line-height:125%; margin-top:2.5%; color:#202020; text-align:left;
+}
+.iboxRightNote NoteTitle
+{
+    display:block; font-family:'Impact'; font-size:180%; text-transform:uppercase; text-align:left;
+    margin-bottom:2.75%; word-spacing:-1.25px; letter-spacing:0px; text-indent:-7.5%;
+}
